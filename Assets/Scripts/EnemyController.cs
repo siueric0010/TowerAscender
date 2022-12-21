@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     public float MaxDist;
     public float AttackDist;
     public float health;
+    public float maxHealth;
     bool seen;
 
     // Start is called before the first frame update
@@ -23,10 +24,12 @@ public class EnemyController : MonoBehaviour
     void FixedUpdate() {
         Transform playerTransform = GameObject.Find("Player").transform;
         Vector3 playerPos = playerTransform.position;
-        transform.LookAt(playerTransform);
+        transform.LookAt(Camera.main.transform);
         float distanceToPlayer = Vector3.Distance(transform.position, playerPos);
         if (distanceToPlayer >= MinDist && (distanceToPlayer <= MaxDist || seen)) {
-            transform.position += transform.forward * speed * Time.deltaTime;
+            Vector3 normalizedDirection = (playerPos - transform.position).normalized;
+            transform.Translate(normalizedDirection * speed * Time.deltaTime, Space.World);
+            // transform.position += transform.forward * speed * Time.deltaTime;
             seen = true;
         }
 

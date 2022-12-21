@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 3669934092945137825}
   - component: {fileID: 3669934092945137826}
   - component: {fileID: 3669934092945137827}
-  - component: {fileID: 3669934092945137828}
   - component: {fileID: 3669934092945137823}
+  - component: {fileID: -3953326776584620594}
   m_Layer: 0
-  m_Name: BombEnemy-Sphere
+  m_Name: MageEnemy-Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2477734343084053034}
+  - {fileID: 7815556550288587833}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3669934092945137829}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &3669934092945137826
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -100,24 +100,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3669934092945137828
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3669934092945137829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0eb7d4cfcae963249ad593dfb6992a74, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2.5
-  MinDist: 2
-  MaxDist: 10
-  AttackDist: 2.5
-  health: 0
-  maxHealth: 0
 --- !u!54 &3669934092945137823
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -134,7 +116,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1001 &981862691701053168
+--- !u!114 &-3953326776584620594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3669934092945137829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa0fb8248ac4bd408f4f8cc6381c891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  MinDist: 0
+  MaxDist: 0
+  AttackDist: 0
+  health: 0
+  maxHealth: 0
+  enemyMageProjectile: {fileID: 7101137192741651206, guid: 191e448886f9f504cb639862209ff41e, type: 3}
+--- !u!1001 &4878673750602479843
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -211,7 +212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3441568888989631706, guid: b54efd321f934604fabd00eb17231643, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3441568888989631706, guid: b54efd321f934604fabd00eb17231643, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -231,8 +232,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b54efd321f934604fabd00eb17231643, type: 3}
---- !u!224 &2477734343084053034 stripped
+--- !u!224 &7815556550288587833 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3441568888989631706, guid: b54efd321f934604fabd00eb17231643, type: 3}
-  m_PrefabInstance: {fileID: 981862691701053168}
+  m_PrefabInstance: {fileID: 4878673750602479843}
   m_PrefabAsset: {fileID: 0}

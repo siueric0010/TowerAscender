@@ -40,7 +40,7 @@ public class PlayerProjectile : MonoBehaviour
     //Upon collision with the Enemy, reduce enemy HP
     private void OnTriggerEnter(Collider other) {
         if (other.name.Contains("Enemy")) {
-            other.gameObject.GetComponent<BombEnemyController>().TakeDamage();
+            other.gameObject.GetComponent<EnemyController>().TakeDamage();
             Destroy(this.gameObject);
         }
     }

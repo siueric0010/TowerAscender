@@ -17,8 +17,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
     }
     void FixedUpdate() {
         transform.Translate(Vector3.right * speed * Time.fixedDeltaTime * Input.GetAxis("Horizontal"));
@@ -29,6 +28,17 @@ public class PlayerController : MonoBehaviour {
 
             cooldownReset = Time.time + fireRate;
             Instantiate(playerProjectile, transform.position, transform.rotation);
+        }
+    }
+
+    public void TakeDamage(float damage) {
+        health -= damage;
+
+        // Only way to lose the game is to lose all HP.
+        if (health <= 0.0f) {
+            // end game
+            health = 0.0f;
+            Debug.Log("Game Over");
         }
     }
 }

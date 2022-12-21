@@ -12,7 +12,8 @@ public class BombEnemyController : EnemyController
         MaxDist = 10.0f;
         AttackDist = 3.0f;
         health = 100.0f;
-}
+        maxHealth = health;
+    }
     public override void Attack() {
         PlayerController.health -= 33.3f;
         Debug.Log("Health: " + PlayerController.health);
