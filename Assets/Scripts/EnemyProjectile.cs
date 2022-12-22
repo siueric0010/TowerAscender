@@ -7,7 +7,7 @@ public class EnemyProjectile : MonoBehaviour {
     private Vector3 projDirection;
     private Vector3 playerPos;
     private float playerDamageTaken = 3.5f;
-    public float speed = 2.0f;
+    public float speed = 4.0f;
     void Start() {
         playerPos = GameObject.Find("Player").transform.position;
         Vector3 currentXZ = transform.position;

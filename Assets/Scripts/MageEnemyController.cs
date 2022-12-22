@@ -6,7 +6,7 @@ public class MageEnemyController : EnemyController
 {
     public GameObject enemyMageProjectile;
     private float cooldownReset;
-    private float fireRate = 0.50f;
+    private float fireRate = 0.75f;
     new void Start() {
         base.Start();
         speed = 2.5f;

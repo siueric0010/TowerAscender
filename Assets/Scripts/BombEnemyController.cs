@@ -8,9 +8,9 @@ public class BombEnemyController : EnemyController
     new void Start() {
         base.Start();
         speed = 2.5f;
-        MinDist = 2.0f;
+        MinDist = 1.0f;
         MaxDist = 10.0f;
-        AttackDist = 3.0f;
+        AttackDist = 1.5f;
         health = 100.0f;
         maxHealth = health;
     }

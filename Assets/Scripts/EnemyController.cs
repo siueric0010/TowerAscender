@@ -12,9 +12,12 @@ public class EnemyController : MonoBehaviour
     public float maxHealth;
     bool seen;
 
+    private Animator animator;
+
     // Start is called before the first frame update
     protected void Start() {
         seen = false;
+        animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -31,6 +34,15 @@ public class EnemyController : MonoBehaviour
             transform.Translate(normalizedDirection * speed * Time.deltaTime, Space.World);
             // transform.position += transform.forward * speed * Time.deltaTime;
             seen = true;
+
+            // For miniscule changes in transform, do not count as moving
+            if(animator != null) {
+                if (distanceToPlayer <= MinDist + 0.05) {
+                    animator.SetBool("IsMoving", false);
+                } else {
+                    animator.SetBool("IsMoving", true);
+                }
+            }
         }
 
         if (distanceToPlayer <= AttackDist) {
