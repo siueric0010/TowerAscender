@@ -10,7 +10,8 @@ public class EnemyController : MonoBehaviour
     public float AttackDist;
     public float health;
     public float maxHealth;
-    bool seen;
+    
+    public static bool seen;
 
     private Animator animator;
 
@@ -18,6 +19,10 @@ public class EnemyController : MonoBehaviour
     protected void Start() {
         seen = false;
         animator = GetComponentInChildren<Animator>();
+    }
+
+    private void OnLevelWasLoaded(int level) {
+        seen = false;
     }
 
     // Update is called once per frame
@@ -55,5 +60,6 @@ public class EnemyController : MonoBehaviour
     }
 
     public virtual void TakeDamage() {
+        seen = true;
     }
 }

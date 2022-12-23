@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3669934092945137823}
   m_Layer: 0
   m_Name: BombEnemy-Sphere
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,6 +35,7 @@ Transform:
   m_Children:
   - {fileID: 2477734343084053034}
   - {fileID: 7073589150974825063}
+  - {fileID: 361479062741160122}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -341,4 +342,94 @@ PrefabInstance:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3441568888989631706, guid: b54efd321f934604fabd00eb17231643, type: 3}
   m_PrefabInstance: {fileID: 981862691701053168}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3596831035672379219
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3669934092945137824}
+    m_Modifications:
+    - target: {fileID: 3814189962525913065, guid: 057d3eb664be36047a998e94f7e36521, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814189962525913065, guid: 057d3eb664be36047a998e94f7e36521, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814189962525913065, guid: 057d3eb664be36047a998e94f7e36521, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814189962525913065, guid: 057d3eb664be36047a998e94f7e36521, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814189962525913065, guid: 057d3eb664be36047a998e94f7e36521, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814189962525913065, guid: 057d3eb664be36047a998e94f7e36521, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814189962525913065, guid: 057d3eb664be36047a998e94f7e36521, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814189962525913065, guid: 057d3eb664be36047a998e94f7e36521, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814189962525913065, guid: 057d3eb664be36047a998e94f7e36521, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814189962525913065, guid: 057d3eb664be36047a998e94f7e36521, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3814189962525913065, guid: 057d3eb664be36047a998e94f7e36521, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4992934521325512684, guid: 057d3eb664be36047a998e94f7e36521, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4992934521325512684, guid: 057d3eb664be36047a998e94f7e36521, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4992934521325512684, guid: 057d3eb664be36047a998e94f7e36521, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4992934521325512684, guid: 057d3eb664be36047a998e94f7e36521, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4992934521325512684, guid: 057d3eb664be36047a998e94f7e36521, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4992934521325512684, guid: 057d3eb664be36047a998e94f7e36521, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4992934521325512684, guid: 057d3eb664be36047a998e94f7e36521, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6903034512011292954, guid: 057d3eb664be36047a998e94f7e36521, type: 3}
+      propertyPath: m_Name
+      value: Explosion
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 057d3eb664be36047a998e94f7e36521, type: 3}
+--- !u!4 &361479062741160122 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3814189962525913065, guid: 057d3eb664be36047a998e94f7e36521, type: 3}
+  m_PrefabInstance: {fileID: 3596831035672379219}
   m_PrefabAsset: {fileID: 0}

@@ -16,8 +16,8 @@ public class EnemyHealthBarHandler : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         image.fillAmount = enemyController.health / enemyController.maxHealth;
-        Debug.Log("Enemy Controller HP: " + enemyController.health);
-        Debug.Log("Enemy Controller Max HP: " + enemyController.maxHealth);
-        Debug.Log("Image Fill Amt: " + image.fillAmount);
+        // Debug.Log("Enemy Controller HP: " + enemyController.health);
+        // Debug.Log("Enemy Controller Max HP: " + enemyController.maxHealth);
+        // Debug.Log("Image Fill Amt: " + image.fillAmount);
     }
 }

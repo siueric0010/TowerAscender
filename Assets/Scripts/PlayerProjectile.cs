@@ -32,7 +32,7 @@ public class PlayerProjectile : MonoBehaviour
     {
         transform.Translate(projDirection.normalized * speed * Time.fixedDeltaTime);
 
-        if(Vector3.Distance(playerPos, this.gameObject.transform.position) > 50.0f) {
+        if(Vector3.Distance(playerPos, this.gameObject.transform.position) > 25.0f) {
             Destroy(this.gameObject);
         }
     }
