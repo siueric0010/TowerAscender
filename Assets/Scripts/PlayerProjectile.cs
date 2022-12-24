@@ -45,6 +45,6 @@ public class PlayerProjectile : MonoBehaviour
         } else if (other.tag.Equals("BlocksProjectile")) {
             Destroy(this.gameObject);
         }
-        Debug.Log("Tag:" + other.tag);
+        // Debug.Log("Tag:" + other.tag);
     }
 }
