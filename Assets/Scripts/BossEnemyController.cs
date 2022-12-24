@@ -10,7 +10,7 @@ public class BossEnemyController : EnemyController
     private ParticleSystem partSystem;
     private SpriteRenderer spriteRend;
     private Canvas canvas;
-    private float damage = 10.0f;
+    private bool isDead = false;
     private float cooldownReset;
     private float fireRate = 1.0f;
 
@@ -30,7 +30,7 @@ public class BossEnemyController : EnemyController
     }
     public override void Attack() {
         // Do some sick boss attack with multiple projectiles?
-        if (Time.time > cooldownReset && projectiles.Length > 0) {
+        if (Time.time > cooldownReset && projectiles.Length > 0 && !isDead) {
                 cooldownReset = Time.time + fireRate;
                 int randomIndex = (int)Mathf.Floor(Random.Range(0, projectiles.Length));
                 Instantiate(projectiles[randomIndex], transform.position, transform.rotation);
@@ -43,7 +43,7 @@ public class BossEnemyController : EnemyController
         if (health <= 0.01f) {
             partSystem.Play();
             StartCoroutine(stopParticlesAndDestroy());
-            damage = 0.0f;
+            isDead = true;
         }
     }
 

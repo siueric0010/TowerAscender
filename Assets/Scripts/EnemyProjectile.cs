@@ -34,6 +34,8 @@ public class EnemyProjectile : MonoBehaviour {
         if (other.name.Equals("Player")) {
             other.gameObject.GetComponent<PlayerController>().TakeDamage(playerDamageTaken);
             Destroy(this.gameObject);
+        } else if (other.tag.Equals("BlocksProjectile")) {
+            Destroy(this.gameObject);
         }
     }
 }

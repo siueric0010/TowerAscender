@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour {
     public static int floorsCleared = 0;
 
     private AudioSource fireAudioSource;
-    private ParticleSystem particleSystem;
+    private ParticleSystem partSystem;
     private Animator animator;
     private SpriteRenderer spriteRend;
     private Rigidbody rb;
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour {
         spriteRend = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
-        particleSystem = GetComponentInChildren<ParticleSystem>();
+        partSystem = GetComponentInChildren<ParticleSystem>();
         fireAudioSource = GetComponentInChildren<AudioSource>();
     }
 
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour {
         if(Input.GetButton("Fire1") && Time.time > cooldownReset) {
             cooldownReset = Time.time + fireRate;
             Instantiate(playerProjectile, transform.position, transform.rotation);
-            particleSystem.Play();
+            partSystem.Play();
             fireAudioSource.PlayOneShot(audioClips[0]);
             StartCoroutine(stopParticleSystem());
         }
@@ -80,6 +80,6 @@ public class PlayerController : MonoBehaviour {
 
     IEnumerator stopParticleSystem() {
         yield return new WaitForSeconds(0.2f);
-        particleSystem.Stop();
+        partSystem.Stop();
     }
 }

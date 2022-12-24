@@ -31,7 +31,12 @@ public class ResultTextHandler : MonoBehaviour {
         }
     }
     public void ReturnToMainMenu() {
-        SceneManager.LoadScene(0);
         PlayerController.health = 100.0f;
+        PlayerController.floorsCleared = 0;
+        GameObject backGroundObject = GameObject.Find("BackgroundMusic");
+        if(backGroundObject != null) {
+            Destroy(backGroundObject);
+        }
+        SceneManager.LoadScene(0);
     }
 }

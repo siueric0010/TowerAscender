@@ -24,15 +24,7 @@ public class BombEnemyController : EnemyController
     }
     public override void Attack() {
         PlayerController.health -= damage;
-        if (partSystem != null) {
-            partSystem.Play();
-            if(audioSrc != null) {
-                audioSrc.Play();
-            }
-            spriteRend.enabled = false;
-            StartCoroutine(stopParticlesAndDestroy());
-            damage = 0.0f; // since the controller is technically still alive, just let it do 0 damage.
-        }
+        Explode();
         // Destroy(this.gameObject);
     }
 
@@ -41,12 +33,24 @@ public class BombEnemyController : EnemyController
         health -= 10.0f;
         // Debug.Log("Enemy Damage Taken -- health: " + health);
         if(health <= 0.01f) {
-            Destroy(gameObject);
+            Explode();
         }
     }
 
     IEnumerator stopParticlesAndDestroy() {
         yield return new WaitForSeconds(0.5f);
         Destroy(this.gameObject);
+    }
+
+    void Explode() {
+        if (partSystem != null) {
+            partSystem.Play();
+            if (audioSrc != null) {
+                audioSrc.Play();
+            }
+            spriteRend.enabled = false;
+            StartCoroutine(stopParticlesAndDestroy());
+            damage = 0.0f; // since the controller is technically still alive, just let it do 0 damage.
+        }
     }
 }
